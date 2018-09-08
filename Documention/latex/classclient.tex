@@ -1,0 +1,306 @@
+\hypertarget{classclient}{}\section{Класс client}
+\label{classclient}\index{client@{client}}
+
+
+Класс, реализующий функции T\+F\+TP клиента  
+
+
+
+
+{\ttfamily \#include $<$client.\+h$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classclient_a204a854c2b58979e60e09aff8106fe8f}{Get}} ()
+\begin{DoxyCompactList}\small\item\em Получение и сохранение файла с сервера \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclient_a79b042ca6412a9dbe2aa6fc7e2c84fd6}{Put}} ()
+\begin{DoxyCompactList}\small\item\em Чтение и отправка файла на сервер \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classclient_a4bc79734708aae7d9017d03a62b5d324}{client}} (const char $\ast$f\+Name, const char $\ast$servaddr)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classclient_ad45e388579b8c0ffec6f29ed2c0c4de9}{$\sim$client}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classclient_a7fc29fda7ffe4db7d5d83505f8be001b}{open\+Socket}} (int port=0)
+\begin{DoxyCompactList}\small\item\em Открытие сокета \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclient_a4bb044f07b5c114bc5ad015a1de6260b}{bind\+Socket}} (int port=0)
+\begin{DoxyCompactList}\small\item\em Связывание сокета с адресом \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclient_a74e23b3ed8459b630822b5838eb5c19c}{chek\+Sended}} (int sent\+\_\+bytes, int size)
+\begin{DoxyCompactList}\small\item\em Проверка отправлено ли сообщение \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclient_a3d5dcc87c7c44d1f334ad39325ce9a08}{getting}} (std\+::ofstream \&file, sockaddr\+\_\+in $\ast$address\+Server)
+\begin{DoxyCompactList}\small\item\em Получение файла с сервера \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclient_a9402ed1d26625f9e65f8d724810511be}{putting}} (std\+::ifstream \&file, sockaddr\+\_\+in $\ast$address\+Server)
+\begin{DoxyCompactList}\small\item\em Отправка файла на сервер \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{classclient_a01979f2bcb8145f6686fa4d8742d3cce}{get\+First\+Req}} (int type, unsigned long size)
+\begin{DoxyCompactList}\small\item\em Формирование первого запроса к серверу \end{DoxyCompactList}\item 
+sockaddr\+\_\+in $\ast$ \mbox{\hyperlink{classclient_ac001ccb8499fb06c82c9e6f648e092a0}{getsockaddr\+\_\+in}} ()
+\begin{DoxyCompactList}\small\item\em Формирование и заполнение адреса \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+S\+O\+C\+K\+ET \mbox{\hyperlink{classclient_af08b371e5f63b6e3b31481bd78116c05}{my\+\_\+sock}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения сокета \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classclient_a6344c796d8938bb50204ae910e8e6ca5}{Mode}} = \char`\"{}octet\char`\"{}
+\begin{DoxyCompactList}\small\item\em Модификатор, определяющий способ пересылки файлов \end{DoxyCompactList}\item 
+sockaddr\+\_\+in \mbox{\hyperlink{classclient_aa4de3c44504f7d2de8e9a4528d52f9e6}{address}}
+\begin{DoxyCompactList}\small\item\em Адрес, к которому привязывается сокет \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classclient_a5287cc97b0640684ac8e1d7e5eca344d}{file\+Name}}
+\begin{DoxyCompactList}\small\item\em имя файла \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classclient_a0e6ff51f62b6a053856cbdbe48408998}{serveraddr}}
+\begin{DoxyCompactList}\small\item\em адрес сервера \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс, реализующий функции T\+F\+TP клиента 
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{classclient_a4bc79734708aae7d9017d03a62b5d324}\label{classclient_a4bc79734708aae7d9017d03a62b5d324}} 
+\index{client@{client}!client@{client}}
+\index{client@{client}!client@{client}}
+\subsubsection{\texorpdfstring{client()}{client()}}
+{\footnotesize\ttfamily client\+::client (\begin{DoxyParamCaption}\item[{const char $\ast$}]{f\+Name,  }\item[{const char $\ast$}]{servaddr }\end{DoxyParamCaption})}
+
+
+
+Конструктор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em f\+Name} & Название файла \\
+\hline
+{\em servaddr} & Адрес сервера, например 255.\+255.\+255.\+255 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classclient_ad45e388579b8c0ffec6f29ed2c0c4de9}\label{classclient_ad45e388579b8c0ffec6f29ed2c0c4de9}} 
+\index{client@{client}!````~client@{$\sim$client}}
+\index{````~client@{$\sim$client}!client@{client}}
+\subsubsection{\texorpdfstring{$\sim$client()}{~client()}}
+{\footnotesize\ttfamily client\+::$\sim$client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Деструктор 
+
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{classclient_a4bb044f07b5c114bc5ad015a1de6260b}\label{classclient_a4bb044f07b5c114bc5ad015a1de6260b}} 
+\index{client@{client}!bind\+Socket@{bind\+Socket}}
+\index{bind\+Socket@{bind\+Socket}!client@{client}}
+\subsubsection{\texorpdfstring{bind\+Socket()}{bindSocket()}}
+{\footnotesize\ttfamily void client\+::bind\+Socket (\begin{DoxyParamCaption}\item[{int}]{port = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Связывание сокета с адресом 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em port} & Порт, с которомым связывается сокет \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em exception} & Если связывание не удалось \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classclient_a74e23b3ed8459b630822b5838eb5c19c}\label{classclient_a74e23b3ed8459b630822b5838eb5c19c}} 
+\index{client@{client}!chek\+Sended@{chek\+Sended}}
+\index{chek\+Sended@{chek\+Sended}!client@{client}}
+\subsubsection{\texorpdfstring{chek\+Sended()}{chekSended()}}
+{\footnotesize\ttfamily void client\+::chek\+Sended (\begin{DoxyParamCaption}\item[{int}]{sent\+\_\+bytes,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка отправлено ли сообщение 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em sent\+\_\+bytes} & Количество отправленных байт \\
+\hline
+{\em size} & Количество байт, которые должны были быть отправлены \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em exception} & Если количество отправленных байт не совпадает с правильным \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classclient_a204a854c2b58979e60e09aff8106fe8f}\label{classclient_a204a854c2b58979e60e09aff8106fe8f}} 
+\index{client@{client}!Get@{Get}}
+\index{Get@{Get}!client@{client}}
+\subsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily void client\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Получение и сохранение файла с сервера 
+
+\mbox{\Hypertarget{classclient_a01979f2bcb8145f6686fa4d8742d3cce}\label{classclient_a01979f2bcb8145f6686fa4d8742d3cce}} 
+\index{client@{client}!get\+First\+Req@{get\+First\+Req}}
+\index{get\+First\+Req@{get\+First\+Req}!client@{client}}
+\subsubsection{\texorpdfstring{get\+First\+Req()}{getFirstReq()}}
+{\footnotesize\ttfamily char $\ast$ client\+::get\+First\+Req (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{unsigned long}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Формирование первого запроса к серверу 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em type} & Тип создаваемого запроса \\
+\hline
+{\em size} & Длина создаваемого запроса \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Сообщение для сервера 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclient_ac001ccb8499fb06c82c9e6f648e092a0}\label{classclient_ac001ccb8499fb06c82c9e6f648e092a0}} 
+\index{client@{client}!getsockaddr\+\_\+in@{getsockaddr\+\_\+in}}
+\index{getsockaddr\+\_\+in@{getsockaddr\+\_\+in}!client@{client}}
+\subsubsection{\texorpdfstring{getsockaddr\+\_\+in()}{getsockaddr\_in()}}
+{\footnotesize\ttfamily sockaddr\+\_\+in $\ast$ client\+::getsockaddr\+\_\+in (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Формирование и заполнение адреса 
+
+\begin{DoxyReturn}{Возвращает}
+Структура содержащая адрес 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclient_a3d5dcc87c7c44d1f334ad39325ce9a08}\label{classclient_a3d5dcc87c7c44d1f334ad39325ce9a08}} 
+\index{client@{client}!getting@{getting}}
+\index{getting@{getting}!client@{client}}
+\subsubsection{\texorpdfstring{getting()}{getting()}}
+{\footnotesize\ttfamily void client\+::getting (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{file,  }\item[{sockaddr\+\_\+in $\ast$}]{address\+Server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получение файла с сервера 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file} & Файловый поток, в который сохраняется файл \\
+\hline
+{\em address\+Server} & Адрес сервера, с которого принимается файл \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em exception} & Если принять не удалось \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classclient_a7fc29fda7ffe4db7d5d83505f8be001b}\label{classclient_a7fc29fda7ffe4db7d5d83505f8be001b}} 
+\index{client@{client}!open\+Socket@{open\+Socket}}
+\index{open\+Socket@{open\+Socket}!client@{client}}
+\subsubsection{\texorpdfstring{open\+Socket()}{openSocket()}}
+{\footnotesize\ttfamily void client\+::open\+Socket (\begin{DoxyParamCaption}\item[{int}]{port = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Открытие сокета 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em port} & Порт, к которому подключается создаваемый сокет \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em exception} & Если создание не удалось \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classclient_a79b042ca6412a9dbe2aa6fc7e2c84fd6}\label{classclient_a79b042ca6412a9dbe2aa6fc7e2c84fd6}} 
+\index{client@{client}!Put@{Put}}
+\index{Put@{Put}!client@{client}}
+\subsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily void client\+::\+Put (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Чтение и отправка файла на сервер 
+
+\mbox{\Hypertarget{classclient_a9402ed1d26625f9e65f8d724810511be}\label{classclient_a9402ed1d26625f9e65f8d724810511be}} 
+\index{client@{client}!putting@{putting}}
+\index{putting@{putting}!client@{client}}
+\subsubsection{\texorpdfstring{putting()}{putting()}}
+{\footnotesize\ttfamily void client\+::putting (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{file,  }\item[{sockaddr\+\_\+in $\ast$}]{address\+Server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправка файла на сервер 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em file} & Файловый поток, из которого читается файл \\
+\hline
+{\em address\+Server} & Адрес сервера, на который отправляется файл \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Исключения}
+{\em exception} & Если отправить не удалось \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{classclient_aa4de3c44504f7d2de8e9a4528d52f9e6}\label{classclient_aa4de3c44504f7d2de8e9a4528d52f9e6}} 
+\index{client@{client}!address@{address}}
+\index{address@{address}!client@{client}}
+\subsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily sockaddr\+\_\+in client\+::address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Адрес, к которому привязывается сокет 
+
+\mbox{\Hypertarget{classclient_a5287cc97b0640684ac8e1d7e5eca344d}\label{classclient_a5287cc97b0640684ac8e1d7e5eca344d}} 
+\index{client@{client}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!client@{client}}
+\subsubsection{\texorpdfstring{file\+Name}{fileName}}
+{\footnotesize\ttfamily const char$\ast$ client\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+имя файла 
+
+\mbox{\Hypertarget{classclient_a6344c796d8938bb50204ae910e8e6ca5}\label{classclient_a6344c796d8938bb50204ae910e8e6ca5}} 
+\index{client@{client}!Mode@{Mode}}
+\index{Mode@{Mode}!client@{client}}
+\subsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily const char$\ast$ client\+::\+Mode = \char`\"{}octet\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Модификатор, определяющий способ пересылки файлов 
+
+\mbox{\Hypertarget{classclient_af08b371e5f63b6e3b31481bd78116c05}\label{classclient_af08b371e5f63b6e3b31481bd78116c05}} 
+\index{client@{client}!my\+\_\+sock@{my\+\_\+sock}}
+\index{my\+\_\+sock@{my\+\_\+sock}!client@{client}}
+\subsubsection{\texorpdfstring{my\+\_\+sock}{my\_sock}}
+{\footnotesize\ttfamily S\+O\+C\+K\+ET client\+::my\+\_\+sock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Переменная для хранения сокета 
+
+\mbox{\Hypertarget{classclient_a0e6ff51f62b6a053856cbdbe48408998}\label{classclient_a0e6ff51f62b6a053856cbdbe48408998}} 
+\index{client@{client}!serveraddr@{serveraddr}}
+\index{serveraddr@{serveraddr}!client@{client}}
+\subsubsection{\texorpdfstring{serveraddr}{serveraddr}}
+{\footnotesize\ttfamily const char$\ast$ client\+::serveraddr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+адрес сервера 
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+T\+F\+T\+Pclient/\mbox{\hyperlink{client_8h}{client.\+h}}\item 
+T\+F\+T\+Pclient/\mbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}

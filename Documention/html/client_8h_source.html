@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TFTPclient: Исходный файл TFTPclient/client.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TFTPclient
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ff2711532c596ff14eb76796fa5d8e57.html">TFTPclient</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">client.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="client_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;winsock2.h&gt;</span> <span class="comment">// Включаем использование сокетов</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span>    </div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classclient.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classclient.html">client</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classclient.html#af08b371e5f63b6e3b31481bd78116c05">   18</a></span>&#160;    SOCKET <a class="code" href="classclient.html#af08b371e5f63b6e3b31481bd78116c05">my_sock</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classclient.html#a6344c796d8938bb50204ae910e8e6ca5">   20</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classclient.html#a6344c796d8938bb50204ae910e8e6ca5">Mode</a> = <span class="stringliteral">&quot;octet&quot;</span>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classclient.html#aa4de3c44504f7d2de8e9a4528d52f9e6">   22</a></span>&#160;    sockaddr_in <a class="code" href="classclient.html#aa4de3c44504f7d2de8e9a4528d52f9e6">address</a>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a7fc29fda7ffe4db7d5d83505f8be001b">openSocket</a>(<span class="keywordtype">int</span> port = 0);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a4bb044f07b5c114bc5ad015a1de6260b">bindSocket</a>(<span class="keywordtype">int</span> port = 0);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a74e23b3ed8459b630822b5838eb5c19c">chekSended</a>(<span class="keywordtype">int</span> sent_bytes, <span class="keywordtype">int</span> size);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a3d5dcc87c7c44d1f334ad39325ce9a08">getting</a>(std::ofstream &amp;file, sockaddr_in *addressServer);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a9402ed1d26625f9e65f8d724810511be">putting</a>(std::ifstream &amp;file, sockaddr_in *addressServer);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="classclient.html#a01979f2bcb8145f6686fa4d8742d3cce">getFirstReq</a>(<span class="keywordtype">int</span> type, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> size);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    sockaddr_in* <a class="code" href="classclient.html#ac001ccb8499fb06c82c9e6f648e092a0">getsockaddr_in</a>();</div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classclient.html#a5287cc97b0640684ac8e1d7e5eca344d">   69</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classclient.html#a5287cc97b0640684ac8e1d7e5eca344d">fileName</a>;           </div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classclient.html#a0e6ff51f62b6a053856cbdbe48408998">   71</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code" href="classclient.html#a0e6ff51f62b6a053856cbdbe48408998">serveraddr</a>;    </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a204a854c2b58979e60e09aff8106fe8f">Get</a>();         </div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classclient.html#a79b042ca6412a9dbe2aa6fc7e2c84fd6">Put</a>();         </div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Конструктор</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"></span>    <a class="code" href="classclient.html#a4bc79734708aae7d9017d03a62b5d324">client</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *fName, <span class="keyword">const</span> <span class="keywordtype">char</span> * servaddr);           </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classclient.html#ad45e388579b8c0ffec6f29ed2c0c4de9">~client</a>();</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="ttc" id="classclient_html_a79b042ca6412a9dbe2aa6fc7e2c84fd6"><div class="ttname"><a href="classclient.html#a79b042ca6412a9dbe2aa6fc7e2c84fd6">client::Put</a></div><div class="ttdeci">void Put()</div><div class="ttdoc">Чтение и отправка файла на сервер </div><div class="ttdef"><b>Definition:</b> client.cpp:54</div></div>
+<div class="ttc" id="classclient_html_ad45e388579b8c0ffec6f29ed2c0c4de9"><div class="ttname"><a href="classclient.html#ad45e388579b8c0ffec6f29ed2c0c4de9">client::~client</a></div><div class="ttdeci">~client()</div><div class="ttdoc">Деструктор </div><div class="ttdef"><b>Definition:</b> client.cpp:94</div></div>
+<div class="ttc" id="classclient_html"><div class="ttname"><a href="classclient.html">client</a></div><div class="ttdoc">Класс, реализующий функции TFTP клиента </div><div class="ttdef"><b>Definition:</b> client.h:14</div></div>
+<div class="ttc" id="classclient_html_a3d5dcc87c7c44d1f334ad39325ce9a08"><div class="ttname"><a href="classclient.html#a3d5dcc87c7c44d1f334ad39325ce9a08">client::getting</a></div><div class="ttdeci">void getting(std::ofstream &amp;file, sockaddr_in *addressServer)</div><div class="ttdoc">Получение файла с сервера </div><div class="ttdef"><b>Definition:</b> client.cpp:216</div></div>
+<div class="ttc" id="classclient_html_a4bb044f07b5c114bc5ad015a1de6260b"><div class="ttname"><a href="classclient.html#a4bb044f07b5c114bc5ad015a1de6260b">client::bindSocket</a></div><div class="ttdeci">void bindSocket(int port=0)</div><div class="ttdoc">Связывание сокета с адресом </div><div class="ttdef"><b>Definition:</b> client.cpp:309</div></div>
+<div class="ttc" id="classclient_html_a6344c796d8938bb50204ae910e8e6ca5"><div class="ttname"><a href="classclient.html#a6344c796d8938bb50204ae910e8e6ca5">client::Mode</a></div><div class="ttdeci">const char * Mode</div><div class="ttdoc">Модификатор, определяющий способ пересылки файлов </div><div class="ttdef"><b>Definition:</b> client.h:20</div></div>
+<div class="ttc" id="classclient_html_ac001ccb8499fb06c82c9e6f648e092a0"><div class="ttname"><a href="classclient.html#ac001ccb8499fb06c82c9e6f648e092a0">client::getsockaddr_in</a></div><div class="ttdeci">sockaddr_in * getsockaddr_in()</div><div class="ttdoc">Формирование и заполнение адреса </div><div class="ttdef"><b>Definition:</b> client.cpp:124</div></div>
+<div class="ttc" id="classclient_html_a01979f2bcb8145f6686fa4d8742d3cce"><div class="ttname"><a href="classclient.html#a01979f2bcb8145f6686fa4d8742d3cce">client::getFirstReq</a></div><div class="ttdeci">char * getFirstReq(int type, unsigned long size)</div><div class="ttdoc">Формирование первого запроса к серверу </div><div class="ttdef"><b>Definition:</b> client.cpp:113</div></div>
+<div class="ttc" id="classclient_html_a0e6ff51f62b6a053856cbdbe48408998"><div class="ttname"><a href="classclient.html#a0e6ff51f62b6a053856cbdbe48408998">client::serveraddr</a></div><div class="ttdeci">const char * serveraddr</div><div class="ttdoc">адрес сервера </div><div class="ttdef"><b>Definition:</b> client.h:71</div></div>
+<div class="ttc" id="classclient_html_af08b371e5f63b6e3b31481bd78116c05"><div class="ttname"><a href="classclient.html#af08b371e5f63b6e3b31481bd78116c05">client::my_sock</a></div><div class="ttdeci">SOCKET my_sock</div><div class="ttdoc">Переменная для хранения сокета </div><div class="ttdef"><b>Definition:</b> client.h:18</div></div>
+<div class="ttc" id="classclient_html_a7fc29fda7ffe4db7d5d83505f8be001b"><div class="ttname"><a href="classclient.html#a7fc29fda7ffe4db7d5d83505f8be001b">client::openSocket</a></div><div class="ttdeci">void openSocket(int port=0)</div><div class="ttdoc">Открытие сокета </div><div class="ttdef"><b>Definition:</b> client.cpp:291</div></div>
+<div class="ttc" id="classclient_html_aa4de3c44504f7d2de8e9a4528d52f9e6"><div class="ttname"><a href="classclient.html#aa4de3c44504f7d2de8e9a4528d52f9e6">client::address</a></div><div class="ttdeci">sockaddr_in address</div><div class="ttdoc">Адрес, к которому привязывается сокет </div><div class="ttdef"><b>Definition:</b> client.h:22</div></div>
+<div class="ttc" id="classclient_html_a4bc79734708aae7d9017d03a62b5d324"><div class="ttname"><a href="classclient.html#a4bc79734708aae7d9017d03a62b5d324">client::client</a></div><div class="ttdeci">client(const char *fName, const char *servaddr)</div><div class="ttdoc">Конструктор </div><div class="ttdef"><b>Definition:</b> client.cpp:83</div></div>
+<div class="ttc" id="classclient_html_a5287cc97b0640684ac8e1d7e5eca344d"><div class="ttname"><a href="classclient.html#a5287cc97b0640684ac8e1d7e5eca344d">client::fileName</a></div><div class="ttdeci">const char * fileName</div><div class="ttdoc">имя файла </div><div class="ttdef"><b>Definition:</b> client.h:69</div></div>
+<div class="ttc" id="classclient_html_a204a854c2b58979e60e09aff8106fe8f"><div class="ttname"><a href="classclient.html#a204a854c2b58979e60e09aff8106fe8f">client::Get</a></div><div class="ttdeci">void Get()</div><div class="ttdoc">Получение и сохранение файла с сервера </div><div class="ttdef"><b>Definition:</b> client.cpp:27</div></div>
+<div class="ttc" id="classclient_html_a9402ed1d26625f9e65f8d724810511be"><div class="ttname"><a href="classclient.html#a9402ed1d26625f9e65f8d724810511be">client::putting</a></div><div class="ttdeci">void putting(std::ifstream &amp;file, sockaddr_in *addressServer)</div><div class="ttdoc">Отправка файла на сервер </div><div class="ttdef"><b>Definition:</b> client.cpp:134</div></div>
+<div class="ttc" id="classclient_html_a74e23b3ed8459b630822b5838eb5c19c"><div class="ttname"><a href="classclient.html#a74e23b3ed8459b630822b5838eb5c19c">client::chekSended</a></div><div class="ttdeci">void chekSended(int sent_bytes, int size)</div><div class="ttdoc">Проверка отправлено ли сообщение </div><div class="ttdef"><b>Definition:</b> client.cpp:103</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
